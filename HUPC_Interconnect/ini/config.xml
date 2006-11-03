@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Connector>
+		<Type>CSVToSQL</Type>
+		<Name>Laborana WWS Test Connector</Name>
+		<CronString>0/1 * * * * ?</CronString>
+		<BatchFileSource>
+			<PollDirectory>./Test/polling</PollDirectory>
+			<FilenamePattern>.*(csv)$</FilenamePattern>
+		</BatchFileSource>
+		<SQLSink>
+			<Attributes>Feld1|Feld2|Feld3</Attributes>
+			<SQLStatement>INSERT INTO importtest (col_string, col_int, col_double) values ('%Feld1%', %Feld2%, %Feld3%)</SQLStatement>
+			<FieldSeperator>;</FieldSeperator>
+			<JDBC>
+				<ServerName>localhost</ServerName>
+				<DataSourceName>Laborana</DataSourceName>
+				<DatabaseName>laborana</DatabaseName>
+				<User>postgres</User>
+				<Password>joe2cool</Password>
+				<PoolMaxConnections>4</PoolMaxConnections>
+				<PoolInitialConnections>1</PoolInitialConnections>
+				<!-- See http://ftp.ics.uci.edu/pub/ietf/http/related/iso639.txt for language codes-->
+				<InputNumberLocale>de</InputNumberLocale>
+				<SQLNumberLocale>en</SQLNumberLocale>
+			</JDBC>
+		</SQLSink>
+	</Connector>
+</Configuration>
