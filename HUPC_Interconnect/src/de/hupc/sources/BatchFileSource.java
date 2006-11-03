@@ -5,7 +5,8 @@ import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
@@ -25,7 +26,7 @@ public class BatchFileSource implements Job {
 	/**
 	 * The Logger, you know :-)
 	 */
-	static Logger logger = Logger.getLogger("de.hupc");
+	static Log logger = LogFactory.getLog("de.hupc");
 	/**
 	 * The directory to look for files
 	 */

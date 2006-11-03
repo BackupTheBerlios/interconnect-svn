@@ -2,7 +2,8 @@ package test;
 
 import java.util.Date;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.PropertyConfigurator;
 import org.quartz.Job;
 import org.quartz.JobDetail;
@@ -15,7 +16,7 @@ import org.quartz.TriggerUtils;
 import org.quartz.impl.StdSchedulerFactory;
 
 public class QuartzTests implements Job {
-	static Logger log = Logger.getLogger("test");
+	static Log log = LogFactory.getLog("test");
 	
 	public static void main(String[] args) {
 		PropertyConfigurator.configure("./ini/log4j.properties");
