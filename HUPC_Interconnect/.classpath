@@ -8,5 +8,7 @@
 	<classpathentry kind="lib" path="lib/postgresql-8.1-405.jdbc3.jar"/>
 	<classpathentry kind="lib" path="lib/quartz-all-1.5.2.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/commons-configuration-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
